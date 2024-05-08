@@ -1,0 +1,6 @@
+CREATE TABLE users (
+    UserId INT AUTO_INCREMENT PRIMARY KEY,
+    UserName VARCHAR(255) NOT NULL,
+    UserPass VARCHAR(255) NOT NULL,
+    UserBScore INT DEFAULT 0
+);

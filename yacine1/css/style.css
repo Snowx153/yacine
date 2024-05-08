@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*
+
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+button {
+    font-size: 24px;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #3773e0;
+    color: rgb(255, 251, 251);
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+button:hover {
+    background-color: #45a049;
+}
+section 
+{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+
+section::before 
+{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#000,#0f0,#000);
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate 
+{
+  0%
+  {
+    transform: translateY(-100%);
+  }
+  100%
+  {
+    transform: translateY(100%);
+  }
+}
+section span 
+{
+  position: relative;
+  display: block;
+  width: calc(6.25vw - 2px);
+  height: calc(6.25vw - 2px);
+  background: #181818;
+  z-index: 2;
+  transition: 1.5s;
+}
+section span:hover 
+{
+  background: #0f0;
+  transition: 0s;
+}
+
+.signin {
+    position: absolute;
+    width: 300px;  /* Taille plus réduite */
+    background: #222;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;  /* Padding réduit pour un look compact */
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+    top: 1%;  /* Position très haute */
+    left: 10%; /* Centrage horizontal */
+    transform: translateX(-50%); /* Centrage précis sur l'axe horizontal */
+
+}
+
+
+.musicButton {
+  padding: 12px 24px;
+  background-color: white; /* Modifié pour la syntaxe CSS correcte */
+  color: black;
+  border-radius: 7px;
+  transition: transform 250ms cubic-bezier(.2, .8, .4, 1);
+  cursor: pointer; /* Ajouté pour rendre le bouton cliquable */
+  display: inline-flex; /* S'assurer que le contenu est centré */
+  align-items: center; /* Centrer verticalement le contenu dans le bouton */
+  justify-content: center; /* Centrer horizontalement le contenu dans le bouton */
+}
+
+.musicButton:hover {
+  transform: scale(1.10);
+}
+
+.musicButton:active {
+  transform: scale(0.9);
+}
+
+
+  
+section .signin .content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+section .signin .content h2 
+{
+  font-size: 2em;
+  color: #0f0;
+  text-transform: uppercase;
+}
+section .signin .content .form 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+section .signin .content .form .inputBox
+{
+  position: relative;
+  width: 100%;
+}
+section .signin .content .form .inputBox input 
+{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+section .signin .content .form .inputBox i 
+{
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i
+{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+.signin .content .form .links 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.signin .content .form .links a 
+{
+  color: #fff;
+  text-decoration: none;
+}
+.signin .content .form .links a:nth-child(2)
+{
+  color: #0f0;
+  font-weight: 600;
+}
+.signin .content .form .inputBox input[type="submit"]
+{
+  padding: 10px;
+  background: #0f0;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+input[type="submit"]:active
+{
+  opacity: 0.6;
+}
+@media (max-width: 900px)
+{
+  section span 
+  {
+    width: calc(10vw - 2px);
+    height: calc(10vw - 2px);
+  }
+}
+@media (max-width: 600px)
+{
+  section span 
+  {
+    width: calc(20vw - 2px);
+    height: calc(20vw - 2px);
+  }
+}
+canvas {
+  display: block; /* Assurez-vous que le display n'est pas 'none' */
+  margin: auto;  /* Centre le canvas si possible */
+}
+
+.quitterButton {
+  
+  padding: 10px 20px; /* Ajustement pour mieux encadrer le texte et l'icône */
+  background-color: red; /* Couleur de fond rouge */
+  color: white; /* Texte en blanc pour contraste */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Bords arrondis */
+  cursor: pointer; /* Curseur en forme de pointeur */
+  display: inline-flex; /* Utilisation de flex pour aligner l'icône et le texte */
+  align-items: center; /* Centrage des items verticalement */
+  justify-content: center; /* Centrage des items horizontalement */
+  transition: transform 250ms cubic-bezier(.2, .8, .4, 1); /* Effet de transition pour hover et active */
+}
+
+.quitterButton img {
+  width: 30px; /* Taille de l'icône ajustée */
+  height: 30px; /* Taille de l'icône ajustée */
+  margin-left: 5px; /* Espace entre le texte et l'icône */
+}
+
+.quitterButton:hover {
+  transform: scale(1.1); /* Agrandir légèrement au survol */
+}
+
+.quitterButton:active {
+  transform: scale(0.9); /* Rétrécir légèrement lors du clic */
+}
+#quitButton img {
+  width: 20px; /* Taille réduite pour l'icône */
+  height: 20px; /* Taille réduite pour l'icône */
+  margin-left: 3px; /* Ajustement pour la marge */
+}
+.help-container {
+  position: fixed;
+  width: 200px; /* Réduit la largeur du conteneur */
+  height: auto; /* Hauteur ajustée automatiquement selon le contenu */
+  background: #ffffff;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7); /* Légèrement réduite pour un look plus subtil */
+  top: 0.5%; /* Position légèrement plus haute */
+  right: 0.5%; /* Plus de marge à droite */
+  font-size: 12px; /* Taille de police globalement réduite pour l'ensemble du conteneur */
+}
+
+.help-title {
+  font-size: 18px; /* Réduit pour économiser de l'espace et adapter au nouveau conteneur */
+  font-weight: bold;
+  margin-bottom: 8px; /* Légèrement réduit */
+  text-align: center;
+}
+
+.key-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px; /* Réduit l'espacement entre chaque élément */
+}
+
+.key {
+  width: 15px; /* Légèrement réduit pour économiser de l'espace */
+  height: 15px; /* Légèrement réduit */
+  background-color: #e22020;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3px; /* Légèrement réduit */
+  font-size: 10px; /* Taille de police réduite pour s'adapter au nouveau format */
+  color: white;
+}
+
+.key-info p {
+  margin: 0;
+  font-size: 12px; /* Réduit pour s'adapter à la nouvelle taille globale */
+}
+.score-container {
+  width: 90%;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.score-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.score-rank {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  width: 40px;
+  text-align: center;
+}
+
+.score-user {
+  flex: 1;
+  font-size: 14px;
+  padding: 0 10px;
+  color: #333;
+}
+
+.score-score {
+  font-size: 14px;
+  font-weight: bold;
+  color: #2C3E50;
+  width: 100px;
+  text-align: right;
+}
